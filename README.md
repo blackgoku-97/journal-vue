@@ -1,6 +1,17 @@
 # journal
 
-This template should help get you started developing with Vue 3 in Vite.
+Está aplicacion es un tipo de diario.
+
+Backend:
+
+Base de datos NoSQL Firebase
+
+Frontend:
+
+HTML5
+SASS
+JS
+VUE FRAMEWORK PROGRESIVO
 
 ## Recommended IDE Setup
 

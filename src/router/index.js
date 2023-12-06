@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+import authRouter from '../modules/auth/router'
 import daybookRouter from '../modules/daybook/router'
+import isAuthenticatedGuard from '../modules/auth/router/auth-guard'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,7 +22,12 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
+      path: '/auth',
+      ...authRouter
+    },
+    {
       path: '/daybook',
+      beforeEnter: [ isAuthenticatedGuard ],
       ...daybookRouter
     }
   ]
